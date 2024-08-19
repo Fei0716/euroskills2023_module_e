@@ -1,0 +1,15 @@
+{
+    "name": "AI News Web App",
+    "short_name": "AI News",
+    "description": "A web application that can fetch latest news using AI",
+    "start_url": "/",
+    "theme_color": "#FFFFFF",
+    "background_color": "#FFFFFF",
+    "display": "standalone",
+    "icons": [
+       {
+            "src": "icon/ai-news.png",
+            "sizes": "any"
+       }
+    ]
+}

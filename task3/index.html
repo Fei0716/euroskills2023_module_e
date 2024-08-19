@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Web Components With Vanilla JS</title>
+    <style>
+        *{
+            padding: 0;
+            margin:  0;
+            box-sizing: border-box;
+        }
+        body{
+            margin: 2rem;
+        }
+        body > *:not(script){
+            display: block;
+            margin-bottom: 1rem;
+        }
+        confirmation-modal  *:not(button){
+            margin-bottom: 1rem;
+        }
+
+    </style>
+</head>
+<body>
+<!--web component 1-->
+    <limited-textarea maxchars="250"></limited-textarea>
+<!--web component 2-->
+    <confirmation-modal label="Accept">
+<!--slot-->
+        <h2>This is my modal</h2>
+        And this is some content.<br/>
+        I can be <b style="color: green">any</b> HTML.
+    </confirmation-modal>
+
+<!--web component 3-->
+    <count-down date="2024-09-06T00:00:00" message="Judgement Day Is Upon Us!!!"></count-down>
+
+    <count-down date="2025-01-01T00:00:00" message="Happy new year!"></count-down>
+
+
+<script src="LimitedTextArea.js"></script>
+<script src="ConfirmationModal.js"></script>
+<script src="CountDown.js"></script>
+<script>
+    //add event listener for limited-textarea 's change custom event from the component
+    document.querySelector('limited-textarea').addEventListener('change', (e)=>{
+        console.log(e.detail);
+    })
+
+    document.querySelector('confirmation-modal').addEventListener('confirm', (e)=>{
+        console.log(e);
+    })
+</script>
+</body>
+</html>
